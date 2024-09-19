@@ -1,0 +1,60 @@
+/* Center the container in the middle of the page */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+/* Horizontally align the coffee_section_2 and add spacing */
+.coffee_section_2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.coffee_section_2 .coffee_img {
+    margin: 0 20px; /* Adds spacing between images */
+    width: 100%; /* Ensure the images are responsive */
+    max-width: 250px; /* Optional: You can control the max size of the images */
+}
+
+.coffee_img img {
+    width: 100%; /* Make the image fill the container */
+    height: auto;
+}
+
+.read_bt {
+    margin-top: 15px;
+}
+
+.types_text {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.looking_text {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    color: #000;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: #f0f0f0;
+}
