@@ -1,60 +1,37 @@
-/* Center the container in the middle of the page */
-.container {
+.device-details-section {
+    padding: 20px;
+}
+
+.device-details-content {
     display: flex;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
+}
+
+.device-details-box {
     padding: 20px;
-    width: 100%;
-    max-width: 1200px;
-    box-sizing: border-box;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Horizontally align the coffee_section_2 and add spacing */
-.coffee_section_2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    margin-top: 40px;
+.action-buttons {
+    margin-top: 20px;
 }
 
-.coffee_section_2 .coffee_img {
-    margin: 0 20px; /* Adds spacing between images */
-    width: 100%; /* Ensure the images are responsive */
-    max-width: 250px; /* Optional: You can control the max size of the images */
+.update-btn, .delete-btn {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.coffee_img img {
-    width: 100%; /* Make the image fill the container */
-    height: auto;
+.delete-btn {
+    background-color: #dc3545;
 }
 
-.read_bt {
-    margin-top: 15px;
-}
-
-.types_text {
-    font-size: 18px;
-    font-weight: 600;
-    margin-top: 10px;
-}
-
-.looking_text {
-    font-size: 14px;
-    margin-top: 5px;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    background-color: #fff;
-    border-radius: 50%;
-    padding: 10px;
-    color: #000;
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-    background-color: #f0f0f0;
+.update-btn:hover, .delete-btn:hover {
+    opacity: 0.9;
 }

@@ -1,166 +1,131 @@
-/* General Body Styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
+/* style1.css */
 
-/* Coffee Section Styling */
-.coffee_section {
-    background-color: #ffffff;
-    padding: 50px 0;
-    text-align: center;
-}
-
-
-
+/* Center the heading */
 .coffee_taital {
+    text-align: center;
     font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 30px;
-    color: #333333;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-/* Coffee Image and Text */
-.coffee_img img {
-    width: 100%;
-    border-radius: 10px;
+/* Container for the devices section */
+.device_section_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
 }
 
+/* Align items horizontally */
+.device_section_2 .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* space between device cards */
+}
+
+/* Individual device card */
+.device_section_2 .col-lg-3, 
+.device_section_2 .col-md-6 {
+    flex: 0 1 300px; /* Adjust the size of each card */
+    max-width: 300px;
+    margin-bottom: 20px;
+    text-align: center; /* Center text inside each card */
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Device image */
+.device_img img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+/* Text styling for device name and details */
 .types_text {
     font-size: 1.5rem;
-    margin-top: 15px;
-    font-weight: 600;
-    color: #555555;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.looking_text {
-    font-size: 1rem;
-    color: #777777;
-    margin: 10px 0 20px;
+.looking_text, .created_text {
+    font-size: 0.9rem;
+    color: #666;
 }
 
+/* Details button styling */
 .read_bt a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #333333;
-    color: #ffffff;
+    background-color: #ff8000;
+    color: #fff;
+    text-transform: uppercase;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 4px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
 }
 
 .read_bt a:hover {
-    background-color: #555555;
+    background-color: #ff5000;
 }
 
-/* Carousel Styles */
-.carousel-inner {
-    display: flex;
-    justify-content: center;
-}
 
-.carousel-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.carousel-item.active {
+.modal {
     display: block;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.carousel-control-prev i,
-.carousel-control-next i {
-    font-size: 1.5rem;
-    color: #fff;
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    position: relative;
 }
 
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-    background-color: #333333;
-}
-.device_section_2 {
-    display: flex;           /* Makes the content inside flexbox */
-    justify-content: flex-start;  /* Aligns content horizontally */
-    flex-wrap: nowrap;       /* Prevents wrapping to a new line */
-    gap: 20px;               /* Adds space between the child elements */
-    padding: 20px;           /* Adds padding around the container */
-    overflow-x: auto;        /* Enables horizontal scrolling if the content exceeds the width */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
 }
 
-.device_section_2 .carousel-item {
-    display: flex;           /* Ensures items inside the carousel-item align horizontally */
-    justify-content: space-between;
+.submit-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.device_section_2 .col-lg-3, 
-.device_section_2 .col-md-6 {
-    flex: 0 0 auto;          /* Ensures columns do not shrink or grow */
-    max-width: 250px;        /* Optional: Set a maximum width to control size */
-    text-align: center;      /* Centers text within each column */
+.add-device-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto;
 }
 
-.device_img img {
-    width: 100%;             /* Ensure images scale to fit their containers */
-    height: auto;
-}
-
-.read_bt {
-    margin-top: 15px;
-    text-align: center;
-}
-
-.types_text {
-    font-size: 18px;
-    font-weight: 600;
-    margin-top: 10px;
-}
-
-.looking_text {
-    font-size: 14px;
-    margin-top: 5px;
-}
-
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .coffee_taital {
-        font-size: 2rem;
-    }
-
-    .types_text {
-        font-size: 1.25rem;
-    }
-
-    .looking_text {
-        font-size: 0.9rem;
-    }
-
-    .read_bt a {
-        padding: 8px 15px;
-    }
-}
-
-@media (max-width: 576px) {
-    .coffee_img img {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    .read_bt a {
-        padding: 7px 12px;
-    }
+.add-device-btn:hover, .submit-btn:hover {
+    opacity: 0.9;
 }
