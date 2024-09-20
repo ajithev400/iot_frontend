@@ -96,7 +96,7 @@ const HomePage = () => {
         status: '',
         location: '',
         configuration: {
-            threshold: '',
+            threshold: 20,
             unit: 'Celsius',
         }
     });
@@ -125,14 +125,15 @@ const HomePage = () => {
             ...prevState,
             configuration: {
                 ...prevState.configuration,
-                [name]: value
+                [name]: name === 'threshold' ? Number(value) : value // Convert threshold to number
             }
         }));
     };
-
     // Submit form data to the API
     const handleFormSubmit = (e) => {
         e.preventDefault();
+
+        
         fetch('http://127.0.0.1:8000/api/devices/', {
             method: 'POST',
             headers: {
@@ -140,10 +141,18 @@ const HomePage = () => {
             },
             body: JSON.stringify(newDevice)
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(err => {
+                    console.error('Error response:', err);
+                    throw new Error('Error adding device: ' + err.errors || 'Unknown error');
+                });
+            }
+            return response.json();
+        })
         .then(data => {
             setDevices(prevDevices => [...prevDevices, data]);
-            setShowForm(false); // Close the form after submission
+            setShowForm(false);
         })
         .catch(error => console.error('Error adding device:', error));
     };
